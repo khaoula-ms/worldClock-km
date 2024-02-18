@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>world clock</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>World clock</h1>
+      <select name="cities" id="cities-selection">
+        <option value="">select a city..</option>
+        <option value="current">My current location</option>
+        <option value="Africa/Tunis">Tunis</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+      </select>
+      <div id="attached-cities">
+        <div class="attached-cities">
+          <div class="city" id="cities">
+            <h2 id="city-name"></h2>
+            <div class="date" id="date"></div>
+          </div>
+          <div class="time" id="time"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      This project was coded by
+      <a href="https://github.com/khaoula-ms" target="_blank">
+        <strong> Khaoula Messaoudi</strong> </a
+      >and open-sourced on <a href="#" target="_blank">Github</a>.
+    </footer>
+    <script src="src/index.js"></script>
+  </body>
+</html>
