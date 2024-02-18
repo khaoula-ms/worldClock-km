@@ -29,14 +29,15 @@ function showDate() {
 showDate();
 setInterval(showDate, 1000);
 function updateCity(event) {
-  let cityTime = event.target.value;
-  if (cityTime === "current") {
-    cityTime = moment.tz.guess();
-  }
-  let cityName = cityTime.replace(`_`, ` `).split(`/`)[1];
-  let cityTimeZone = moment().tz(cityTime);
-  let cityElement = document.querySelector("#attached-cities");
-  cityElement.innerHTML = `
+  if (event.target.value.lenght > 0) {
+    let cityTime = event.target.value;
+    if (cityTime === "current") {
+      cityTime = moment.tz.guess();
+    }
+    let cityName = cityTime.replace(`_`, ` `).split(`/`)[1];
+    let cityTimeZone = moment().tz(cityTime);
+    let cityElement = document.querySelector("#attached-cities");
+    cityElement.innerHTML = `
     <div class="attached-cities" >
           <div class="city">
             <h2 id="city-name">${cityName}</h2>
@@ -48,6 +49,7 @@ function updateCity(event) {
             "h:mm:ss"
           )} <small>${cityTimeZone.format("A")}</small></div>
         </div> <a href="/">All cities</a>`;
+  }
 }
 
 let citiesSelect = document.querySelector("#cities-selection");
